@@ -65,7 +65,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Mobile",
     icon: "mobile",
-    skills: ["Android (Java)", "PhoneGap"],
+    skills: ["Android (Java)", "PhoneGap", "Ionic"],
   },
   {
     title: "Educação & Liderança",
