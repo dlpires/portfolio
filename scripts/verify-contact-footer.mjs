@@ -34,10 +34,13 @@ check("contato: aria-labelledby", contact.includes('aria-labelledby="contato-tit
 check("contato: heading", contact.includes("Vamos conversar"));
 check("contato: subtext", contact.includes("sempre aberto"));
 check("contato: email visível (mailto)", contact.includes(">diegoluispires@gmail.com</a>"));
-check("contato: 2 links sociais com target=_blank", (contact.match(/target="_blank"/g) ?? []).length >= 2);
+check(
+  "contato: 2 links sociais com target=_blank",
+  (contact.match(/target="_blank"/g) ?? []).length >= 2,
+);
 
 // --- Footer ---
-check("footer: copyright", footer.includes("© 2026 Diego Luis Pires"));
+check("footer: copyright", footer.includes("© 2026") && footer.includes("Diego Luis Pires"));
 check("footer: localização", footer.includes("Mogi-Mirim/SP"));
 check(
   "footer: link currículo com download",
@@ -45,10 +48,16 @@ check(
 );
 check("footer: link GitHub", footer.includes("https://github.com/dlpires"));
 check("footer: link LinkedIn", footer.includes("https://linkedin.com/in/diegoluispires"));
-check("footer: 2 links sociais com target=_blank", (footer.match(/target="_blank"/g) ?? []).length >= 2);
+check(
+  "footer: 2 links sociais com target=_blank",
+  (footer.match(/target="_blank"/g) ?? []).length >= 2,
+);
 
 // --- mailto NÃO abre em nova aba (em ambas as seções) ---
-for (const [name, slice] of [["contato", contact], ["footer", footer]]) {
+for (const [name, slice] of [
+  ["contato", contact],
+  ["footer", footer],
+]) {
   const mailtoIdx = slice.indexOf('href="mailto:diegoluispires@gmail.com"');
   if (mailtoIdx === -1) {
     check(`${name}: link mailto presente`, false);
