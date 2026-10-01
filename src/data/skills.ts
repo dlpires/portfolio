@@ -42,6 +42,7 @@ export const skillCategories: SkillCategory[] = [
     title: "IA & Agentes",
     icon: "ai",
     skills: [
+      "Desenvolvimento Agêntico",
       "Agentes, skills & comandos",
       "Codex",
       "Cursor",
