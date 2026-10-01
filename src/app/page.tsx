@@ -1,4 +1,4 @@
-import { About, Hero, Projects, SkillsGrid, Timeline } from "@/sections";
+import { About, Contact, Hero, Projects, SkillsGrid, Timeline } from "@/sections";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Timeline />
       <SkillsGrid />
       <Projects />
+      <Contact />
     </main>
   );
 }
