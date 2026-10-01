@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Diego Pires — DevOps & Portfolio",
+  title: "Diego Luis Pires — Fullstack Developer & Data Engineer",
   description:
-    "Portfolio pessoal de Diego Pires — DevOps, automação, desenvolvimento full-stack.",
+    "Portfólio de Diego Luis Pires, Fullstack Developer & Data Engineer no SiDi: aplicações web, dados e machine learning.",
 };
 
 export default function RootLayout({
