@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${jetbrainsMono.variable} ${inter.variable}`}
+      className={`dark ${jetbrainsMono.variable} ${inter.variable}`}
     >
       <body>{children}</body>
     </html>
