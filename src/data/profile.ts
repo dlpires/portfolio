@@ -24,7 +24,7 @@ export type Profile = {
 export const profile: Profile = {
   name: "Diego Luis Pires",
   role: "Fullstack Developer & Data Engineer",
-  bio: "Desenvolvedor Cloud no SiDi, atuando de aplicações fullstack a pipelines de dados. Bacharel em Sistemas de Informação, com MBA em Data Science & Analytics pela USP/Esalq e passagem como professor pelo Centro Paula Souza.",
+  bio: "Desenvolvedor Cloud no SiDi, atuando de aplicações fullstack a pipelines de dados. Bacharel em Sistemas de Informação, MBA em Data Science & Analytics pela USP/Esalq e professor de Ensino Técnico e Superior.",
   avatar: {
     src: null,
     initials: "DP",
