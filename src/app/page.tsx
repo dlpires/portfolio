@@ -11,9 +11,7 @@ export default function Home() {
         aria-label="Projetos"
         className="min-h-dvh scroll-mt-4 px-6 py-16 sm:px-10"
       >
-        <h2 className="font-display text-2xl font-semibold text-foreground">
-          Projetos
-        </h2>
+        <h2 className="font-display text-2xl font-semibold text-foreground">Projetos</h2>
         <p className="font-body mt-2 text-muted">Em breve.</p>
       </section>
     </main>

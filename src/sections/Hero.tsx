@@ -41,7 +41,7 @@ export function Hero() {
           <div
             role="img"
             aria-label={avatar.alt}
-            className="font-display flex size-32 items-center justify-center rounded-full border-2 border-border bg-surface text-4xl text-accent"
+            className="font-display flex size-32 items-center justify-center rounded-full border-2 border-border bg-accent text-4xl text-accent-foreground"
           >
             {avatar.initials}
           </div>
@@ -54,11 +54,9 @@ export function Hero() {
           {name}
         </h1>
 
-        <p className="font-display text-base text-accent sm:text-lg">{role}</p>
+        <p className="font-display text-base text-foreground sm:text-lg">{role}</p>
 
-        <p className="font-body max-w-xl text-balance text-base text-muted sm:text-lg">
-          {bio}
-        </p>
+        <p className="font-body max-w-xl text-balance text-base text-muted sm:text-lg">{bio}</p>
 
         <ul className="flex items-center justify-center gap-4">
           {socials.map((social) => {

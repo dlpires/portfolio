@@ -24,10 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`dark ${jetbrainsMono.variable} ${inter.variable}`}
-    >
+    <html lang="pt-BR" className={`dark ${jetbrainsMono.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   );
