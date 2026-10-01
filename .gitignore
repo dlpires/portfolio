@@ -47,3 +47,6 @@ skills-lock.json
 
 # openspec
 openspec/
+
+# hermes agent
+.hermes/
