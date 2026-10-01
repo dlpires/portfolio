@@ -22,13 +22,13 @@ export type Profile = {
 };
 
 export const profile: Profile = {
-  name: "Diego Luis Peres Pires",
+  name: "Diego Luis Pires",
   role: "Senior Data Engineer & Cloud Fullstack Developer",
   bio: "Senior Data Engineer & Cloud Fullstack Developer no SiDi, atuando com engenharia de dados, pipelines ETL e arquitetura em nuvem AWS. Professor de Ensino Superior e Técnico e pós-graduado em Data Science & Analytics pela USP/Esalq.",
   avatar: {
     src: null,
     initials: "DP",
-    alt: "Foto de perfil de Diego Luis Peres Pires",
+    alt: "Foto de perfil de Diego Luis Pires",
   },
   socials: [
     {
