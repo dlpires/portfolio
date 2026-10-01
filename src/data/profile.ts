@@ -21,6 +21,8 @@ export type Profile = {
   socials: SocialLink[];
 };
 
+export const email = "diegoluispires@gmail.com";
+
 export const profile: Profile = {
   name: "Diego Luis Pires",
   role: "Senior Data Engineer & Cloud Fullstack Developer",
@@ -43,7 +45,7 @@ export const profile: Profile = {
     },
     {
       label: "Email",
-      href: "mailto:diegoluispires@gmail.com",
+      href: `mailto:${email}`,
       icon: "mail",
     },
   ],

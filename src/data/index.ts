@@ -1,5 +1,8 @@
-export { profile } from "./profile";
+export { email, profile } from "./profile";
 export type { Profile, SocialIcon, SocialLink } from "./profile";
+
+export { contact } from "./contact";
+export type { Contact } from "./contact";
 
 export { about } from "./about";
 export type { About, Badge, BadgeIcon, EducationItem } from "./about";
