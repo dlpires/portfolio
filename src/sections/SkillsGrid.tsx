@@ -1,4 +1,5 @@
 import {
+  Bot,
   BrainCircuit,
   Cloud,
   Database,
@@ -14,6 +15,7 @@ const iconMap = {
   frontend: MonitorSmartphone,
   backend: Server,
   data: BrainCircuit,
+  ai: Bot,
   cloud: Cloud,
   database: Database,
   mobile: Smartphone,

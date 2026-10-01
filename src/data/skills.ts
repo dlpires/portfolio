@@ -5,6 +5,7 @@ export type SkillIcon =
   | "cloud"
   | "database"
   | "mobile"
+  | "ai"
   | "education";
 
 export type SkillCategory = {
@@ -35,6 +36,19 @@ export const skillCategories: SkillCategory[] = [
       "GenAI",
       "MLOps",
       "MLFlow",
+    ],
+  },
+  {
+    title: "IA & Agentes",
+    icon: "ai",
+    skills: [
+      "Agentes, skills & comandos",
+      "Codex",
+      "Cursor",
+      "OpenCode",
+      "Hermes",
+      "Claude Code",
+      "Docência em IA",
     ],
   },
   {
