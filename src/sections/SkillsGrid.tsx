@@ -5,6 +5,7 @@ import {
   GraduationCap,
   MonitorSmartphone,
   Server,
+  Smartphone,
 } from "lucide-react";
 
 import { skillCategories, type SkillIcon } from "@/data/skills";
@@ -15,6 +16,7 @@ const iconMap = {
   data: BrainCircuit,
   cloud: Cloud,
   database: Database,
+  mobile: Smartphone,
   education: GraduationCap,
 } as const satisfies Record<SkillIcon, unknown>;
 

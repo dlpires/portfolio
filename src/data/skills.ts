@@ -4,6 +4,7 @@ export type SkillIcon =
   | "data"
   | "cloud"
   | "database"
+  | "mobile"
   | "education";
 
 export type SkillCategory = {
@@ -16,31 +17,44 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
     icon: "frontend",
-    skills: ["ReactJS", "AngularJS", "TypeScript", "HTML/CSS"],
+    skills: ["JavaScript", "TypeScript", "React", "Angular", "HTML/CSS", "Tailwind"],
   },
   {
     title: "Backend",
     icon: "backend",
-    skills: ["Python", "Node.js", "APIs REST", "Web Scraping"],
+    skills: ["Node.js", "Python (Flask)", "PHP", "Java", "APIs REST", "Web Scraping"],
   },
   {
     title: "Dados & ML",
     icon: "data",
-    skills: ["ETL", "Machine Learning", "GenAI", "MLFlow"],
+    skills: [
+      "Python (Pandas/NumPy)",
+      "Jupyter",
+      "ETL",
+      "Machine Learning",
+      "GenAI",
+      "MLOps",
+      "MLFlow",
+    ],
   },
   {
     title: "Cloud & DevOps",
     icon: "cloud",
-    skills: ["AWS", "Docker", "Jenkins", "Ansible", "CI/CD"],
+    skills: ["AWS", "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "Ansible", "CI/CD"],
   },
   {
-    title: "Bancos & Observabilidade",
+    title: "Bancos de Dados",
     icon: "database",
-    skills: ["SQL Server", "MySQL", "PostgreSQL", "Grafana", "Prometheus"],
+    skills: ["SQL Server", "MySQL", "PostgreSQL"],
+  },
+  {
+    title: "Mobile",
+    icon: "mobile",
+    skills: ["Android (Java)", "PhoneGap"],
   },
   {
     title: "Educação & Liderança",
     icon: "education",
-    skills: ["Docência superior", "Tech Lead", "Scrum"],
+    skills: ["Material didático", "Professor ETEC", "Docência superior", "Tech Lead", "Scrum"],
   },
 ];
