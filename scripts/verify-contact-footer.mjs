@@ -16,16 +16,17 @@ function check(label, cond) {
 }
 
 const cStart = html.indexOf('<section id="contato"');
+const cEnd = cStart === -1 ? -1 : html.indexOf("</section>", cStart);
 const fStart = html.indexOf("<footer");
 const sStart = html.indexOf("<script", fStart === -1 ? 0 : fStart);
 
-check("estrutura: seção contato presente", cStart !== -1);
+check("estrutura: seção contato presente", cStart !== -1 && cEnd !== -1);
 check("estrutura: footer presente", fStart !== -1);
 check("estrutura: contato vem antes do footer", cStart !== -1 && fStart !== -1 && cStart < fStart);
 
-// Fatias: Contato = do <section id="contato"> até o <footer;
+// Fatias: Contato = do <section id="contato"> até o seu </section>;
 // Footer = do <footer> até o primeiro <script> (payload RSC fica fora da fatia).
-const contact = cStart !== -1 && fStart !== -1 ? html.slice(cStart, fStart) : "";
+const contact = cStart !== -1 && cEnd !== -1 ? html.slice(cStart, cEnd) : "";
 const footer = fStart !== -1 ? html.slice(fStart, sStart === -1 ? html.length : sStart) : "";
 
 // --- Contato ---
