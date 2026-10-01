@@ -3,12 +3,12 @@ import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-display",
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
 const inter = Inter({
-  variable: "--font-body",
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
