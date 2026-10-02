@@ -41,32 +41,29 @@ check(
 
 // --- Footer ---
 check("footer: copyright", footer.includes("© 2026") && footer.includes("Diego Luis Pires"));
-check("footer: localização", footer.includes("Mogi-Mirim/SP"));
+check("footer: localização", footer.includes("Mogi-Guaçu/SP"));
+check("footer: localização antiga removida", !footer.includes("Mogi-Mirim/SP"));
 check(
   "footer: link currículo com download",
   footer.includes("/portfolio/cv-diego-luis-peres-pires.pdf") && footer.includes("download"),
 );
-check("footer: link GitHub", footer.includes("https://github.com/dlpires"));
-check("footer: link LinkedIn", footer.includes("https://linkedin.com/in/diegoluispires"));
+// remoção: o footer não repete os links sociais (ficam só em "Vamos conversar")
 check(
-  "footer: 2 links sociais com target=_blank",
-  (footer.match(/target="_blank"/g) ?? []).length >= 2,
+  "footer: sem links sociais repetidos",
+  !footer.includes("https://github.com/dlpires") &&
+    !footer.includes("https://linkedin.com/in/diegoluispires") &&
+    !footer.includes('href="mailto:diegoluispires@gmail.com"'),
 );
 
-// --- mailto NÃO abre em nova aba (em ambas as seções) ---
-for (const [name, slice] of [
-  ["contato", contact],
-  ["footer", footer],
-]) {
-  const mailtoIdx = slice.indexOf('href="mailto:diegoluispires@gmail.com"');
-  if (mailtoIdx === -1) {
-    check(`${name}: link mailto presente`, false);
-  } else {
-    const openStart = slice.lastIndexOf("<a", mailtoIdx);
-    const openEnd = slice.indexOf(">", mailtoIdx);
-    const tag = slice.slice(openStart, openEnd + 1);
-    check(`${name}: mailto sem target=_blank`, !tag.includes("target="));
-  }
+// --- mailto NÃO abre em nova aba (Contato) ---
+const mailtoIdx = contact.indexOf('href="mailto:diegoluispires@gmail.com"');
+if (mailtoIdx === -1) {
+  check("contato: link mailto presente", false);
+} else {
+  const openStart = contact.lastIndexOf("<a", mailtoIdx);
+  const openEnd = contact.indexOf(">", mailtoIdx);
+  const tag = contact.slice(openStart, openEnd + 1);
+  check("contato: mailto sem target=_blank", !tag.includes("target="));
 }
 
 if (failures === 0) {
