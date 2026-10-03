@@ -24,7 +24,10 @@ const iconMap = {
 
 export function SkillsGrid() {
   return (
-    <section aria-labelledby="skills-title" className="scroll-mt-4 px-6 py-16 sm:px-10">
+    <section
+      aria-labelledby="skills-title"
+      className="scroll-mt-16 lg:scroll-mt-4 px-6 py-16 sm:px-10"
+    >
       <div className="mx-auto flex max-w-4xl flex-col gap-8">
         <h2 id="skills-title" className="font-display text-2xl font-semibold text-foreground">
           Skills
