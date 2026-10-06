@@ -1,0 +1,7 @@
+export { Hero } from "./Hero";
+export { About } from "./About";
+export { Timeline } from "./Timeline";
+export { SkillsGrid } from "./SkillsGrid";
+export { Projects } from "./Projects";
+export { Contact } from "./Contact";
+export { Footer } from "./Footer";

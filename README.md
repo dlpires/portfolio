@@ -1,67 +1,36 @@
-# Portfolio — Diego Luis Pires
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**Fullstack Developer & Data Engineer**
+## Getting Started
 
-[![GitHub Pages](https://img.shields.io/badge/deploy-GitHub%20Pages-blue?logo=github)](https://dlpires.github.io/portfolio)
-[![Next.js](https://img.shields.io/badge/framework-Next.js-black?logo=next.js)](https://nextjs.org)
-[![Tailwind CSS](https://img.shields.io/badge/style-Tailwind%20CSS-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
-
-Portfolio pessoal desenvolvido com Next.js (SSG) + Tailwind CSS, com deploy automatizado via GitHub Actions para GitHub Pages. O objetivo é apresentar minha trajetória profissional, projetos, habilidades e formas de contato.
-
----
-
-## Stack
-
-| Camada        | Tecnologia                              |
-| ------------- | --------------------------------------- |
-| Framework     | Next.js (Static Site Generation)        |
-| Estilização   | Tailwind CSS                            |
-| Ícones        | lucide-react                            |
-| Deploy        | GitHub Actions → GitHub Pages           |
-
-## Seções
-
-- **Hero** — Apresentação pessoal, badges (AWS Certified, MBA USP/Esalq) e links sociais
-- **Sobre Mim** — Biografia, formação acadêmica e grid de habilidades técnicas
-- **Projetos** — Cards dos meus projetos no GitHub com detalhes de stack
-- **Timeline** — Linha do tempo interativa da carreira
-- **Contato** — Formulário funcional + footer com links profissionais
-
-## Projetos em Destaque
-
-| Projeto | Descrição | Stack |
-|---------|-----------|-------|
-| [tcc-mba-usp](https://github.com/dlpires/tcc-mba-usp) | Classificação de Influenciadores com ML não-supervisionado | Python/Jupyter |
-| [quero-cafe-bar](https://github.com/dlpires/quero-cafe-bar) | Sistema de gerenciamento para estabelecimento | JavaScript |
-| [pokedex-angular](https://github.com/dlpires/pokedex-angular) | Pokédex interativa | TypeScript/Angular |
-| [palmphone-n](https://github.com/dlpires/palmphone-n) | App Android de coleta de chamadas | Java/Android |
-| [scaffold](https://github.com/dlpires/scaffold) | Project scaffold CLI para Python | Python |
-| [iniciativa_devops](https://github.com/dlpires/iniciativa_devops) | Desafios práticos de DevOps | DevOps/EJS |
-
-## Desenvolvimento
+First, run the development server:
 
 ```bash
-# Instalar dependências
-npm install
-
-# Servidor de desenvolvimento
 npm run dev
-
-# Build estático
-npm run build
-
-# Preview do build
-npm run start
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## CI/CD
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Ao fazer push na branch `main`, o GitHub Actions automaticamente:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. Instala dependências
-2. Executa o build estático
-3. Faz deploy do conteúdo da pasta `out/` para a branch `gh-pages`
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Licença
+## Learn More
 
-Este projeto é de uso pessoal para fins de portfólio.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
