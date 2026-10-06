@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { profile } from "@/data/profile";
 
 const LINKS = [
@@ -63,20 +64,24 @@ export function Nav() {
             {profile.name}
           </a>
 
-          <button
-            type="button"
-            aria-expanded={open}
-            aria-controls="nav-menu"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            onClick={() => setOpen((value) => !value)}
-            className="flex size-11 items-center justify-center rounded-md text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-          >
-            {open ? (
-              <X aria-hidden="true" className="size-5" />
-            ) : (
-              <Menu aria-hidden="true" className="size-5" />
-            )}
-          </button>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls="nav-menu"
+              aria-label={open ? "Fechar menu" : "Abrir menu"}
+              onClick={() => setOpen((value) => !value)}
+              className="flex size-11 items-center justify-center rounded-md text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              {open ? (
+                <X aria-hidden="true" className="size-5" />
+              ) : (
+                <Menu aria-hidden="true" className="size-5" />
+              )}
+            </button>
+          </div>
         </div>
 
         {open && (
@@ -133,6 +138,10 @@ export function Nav() {
             ))}
           </ul>
         </nav>
+
+        <div className="mt-auto pt-8">
+          <ThemeToggle />
+        </div>
       </aside>
     </>
   );

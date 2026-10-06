@@ -10,14 +10,26 @@ export type CareerMilestone = {
 export const careerMilestones: CareerMilestone[] = [
   {
     period: "2016-2019",
-    title: "FATEC/FHO",
+    title: "FHO | Uniararas",
     description: "Bacharelado em Sistemas de Informação",
     icon: "education",
   },
   {
-    period: "2018-atual",
+    period: "2019-2021",
+    title: "FHO | Uniararas",
+    description: "Especialização em Data Science",
+    icon: "education",
+  },
+  {
+    period: "2020-atual",
     title: "Professor",
     description: "Ensino Técnico e Superior",
+    icon: "work",
+  },
+  {
+    period: "2020-2023",
+    title: "SiDi - JR e PL",
+    description: "Analista de TI JR/PL",
     icon: "work",
   },
   {

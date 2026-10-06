@@ -23,7 +23,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npm run lint
       - run: npm run build
+      - run: node scripts/verify-nav.mjs
+      - run: node scripts/verify-seo.mjs
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
