@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Diego Luis Pires
 
-## Getting Started
+Portfólio profissional de **Diego Luis Pires**, Senior Data Engineer & Cloud Fullstack Developer.
+Site estático (SSG) publicado no GitHub Pages: <https://dlpires.github.io/portfolio/>.
 
-First, run the development server:
+## Stack
+
+| Camada      | Tecnologia                                   |
+| ----------- | -------------------------------------------- |
+| Framework   | Next.js 16 (App Router, `output: "export"`)  |
+| UI          | React 19                                     |
+| Estilização | Tailwind CSS v4 (CSS-first, sem config JS)   |
+| Ícones      | lucide-react                                 |
+| Linguagem   | TypeScript                                   |
+| Deploy      | GitHub Actions → GitHub Pages                |
+
+## Pré-requisitos
+
+- Node.js 20 ou superior
+- npm
+
+## Como rodar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install   # instala as dependências
+npm run dev   # servidor de desenvolvimento em http://localhost:3000/portfolio
+npm run build # build estático; gera out/
+npm run lint  # análise estática (ESLint)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> `npm run start` (`next start`) **não funciona** com `output: "export"`. Para pré-visualizar
+> o build, sirva a pasta `out/` respeitando o `basePath` (os assets são referenciados como
+> `/portfolio/_next/...`):
+>
+> ```bash
+> mkdir -p /tmp/preview && ln -sfn "$PWD/out" /tmp/preview/portfolio
+> npx serve /tmp/preview   # abra http://localhost:3000/portfolio/
+> ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/         # layout raiz, página, sitemap.ts, robots.ts e CSS global
+  components/  # Nav, ThemeToggle e ícones
+  sections/    # Hero, About, Timeline, SkillsGrid, Projects, Contact, Footer
+  data/        # conteúdo tipado do portfólio (profile, projects, career, ...)
+scripts/       # verificações do export estático
+public/        # assets estáticos servidos na raiz (currículo PDF, .nojekyll)
+```
 
-## Learn More
+O conteúdo do site vive em `src/data/` — edite lá em vez de mexer nas seções.
 
-To learn more about Next.js, take a look at the following resources:
+## Verificação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto não usa framework de testes: as verificações são scripts Node que assertam sobre o
+export estático gerado em `out/`. Rode sempre após o build:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+node scripts/verify-nav.mjs   # navegação fixa (sidebar + topbar)
+node scripts/verify-seo.mjs   # meta tags, Open Graph, JSON-LD, sitemap, robots.txt e tema
+```
 
-## Deploy on Vercel
+Cada script imprime `OK`/`FAIL` por asserção, termina com `-- todos passaram --` e sai com
+código 0 só quando tudo passa. Há assertivas negativas para o que deve **deixar de existir**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Formatação: o Prettier está configurado (`.prettierrc`), mas não há script `format`. Rode nos
+arquivos que você alterar (parte da base ainda não está no padrão):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx prettier --write <arquivo>
+```
+
+## Deploy
+
+O workflow `.github/workflows/deploy.yml` roda em push na branch `main`: instala as
+dependências (com cache), roda `lint`, `build` e os scripts de verificação, e publica `out/`
+no GitHub Pages. O `basePath` é `/portfolio` (project page), por isso `public/.nojekyll` é
+obrigatório — sem ele o Jekyll do GitHub Pages descarta `_next/` e quebra todos os assets.
+
+## Agentes e Skills
+
+As convenções de git, os comandos e a lista de agentes/skills disponíveis estão em
+[`AGENTS.md`](./AGENTS.md).
