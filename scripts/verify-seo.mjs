@@ -15,7 +15,10 @@ function check(label, cond) {
 }
 
 // --- Meta / SEO ---
-check("title: role com &amp;", html.includes("Senior Data Engineer &amp; Cloud Fullstack Developer"));
+check(
+  "title: role com &amp;",
+  html.includes("Senior Data Engineer &amp; Cloud Fullstack Developer"),
+);
 check("meta description presente", html.includes('name="description"'));
 check("canonical presente", html.includes('rel="canonical"'));
 check("og:type presente", html.includes('property="og:type"'));
@@ -25,10 +28,7 @@ check("twitter:card presente", html.includes('name="twitter:card"'));
 check("URL absoluta /portfolio/", html.includes("https://dlpires.github.io/portfolio/"));
 
 // --- JSON-LD ---
-check(
-  "JSON-LD Person",
-  html.includes('application/ld+json') && html.includes('"@type":"Person"'),
-);
+check("JSON-LD Person", html.includes("application/ld+json") && html.includes('"@type":"Person"'));
 check("JSON-LD worksFor", html.includes('"worksFor"'));
 
 // --- Sitemap / robots ---
