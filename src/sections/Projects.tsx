@@ -8,7 +8,7 @@ export function Projects() {
     <section
       id="projetos"
       aria-labelledby="projetos-title"
-      className="scroll-mt-4 px-6 py-16 sm:px-10"
+      className="scroll-mt-16 lg:scroll-mt-4 px-6 py-16 sm:px-10"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-8">
         <h2 id="projetos-title" className="font-display text-2xl font-semibold text-foreground">

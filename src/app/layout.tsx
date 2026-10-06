@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
+import { Nav } from "@/components";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -25,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`dark ${jetbrainsMono.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <div className="lg:pl-64">{children}</div>
+      </body>
     </html>
   );
 }

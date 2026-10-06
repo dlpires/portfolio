@@ -16,7 +16,7 @@ export function Contact() {
     <section
       id="contato"
       aria-labelledby="contato-title"
-      className="scroll-mt-4 px-6 py-16 sm:px-10"
+      className="scroll-mt-16 lg:scroll-mt-4 px-6 py-16 sm:px-10"
     >
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
         <h2 id="contato-title" className="font-display text-2xl font-semibold text-foreground">
